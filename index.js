@@ -20,6 +20,7 @@ async function apiSendSynchedCollection(sourceDir, auth, collectionId) {
   let options = {};
   options.cwd=sourceDir;
   await exec.exec(`zip`, [`-r`,`guru_collection.zip`,`./`], options);
+  core.setOutput('zip', sourceDir + '/guru_collection.zip');
   if (process.env.DEBUG) {
     console.log(`DEBUG mode: not deploying ${sourceDir}/guru_collection.zip to https://api.getguru.com/app/contentsyncupload?collectionId=${collectionId}`);
   } else {

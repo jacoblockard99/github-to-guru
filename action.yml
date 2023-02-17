@@ -7,6 +7,8 @@ branding:
 outputs:
   created:
     description: 'number of cards created'
+  zip:
+    description: 'path to the temporary collection zip'
 runs:
   using: 'node16'
   main: 'index.js'
